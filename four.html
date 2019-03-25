@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>#隔行变算</title>
+		<!--<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			li:nth-child(2n){
+				background-color: yellow;
+			}
+			li:nth-child(2n+1){
+				background-color: red;
+			}
+			li:hover{
+				background-color: wheat;
+			}
+		</style>-->
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<script type="text/javascript">
+			window.onload = function(){
+				var lis= document.getElementsByTagName("li");
+				for(var i=0;i<lis.length;i++){
+					if(i%2==0){
+						lis[i].style.backgroundColor="red";
+					}else{
+						lis[i].style.backgroundColor="yellow";
+
+					}
+					//添加匿名函数
+					(function(i){
+						lis[i].onmouseover=function(){
+							lis[i].style.backgroundColor="palegreen";
+						}
+						lis[i].onmouseout=function(){
+							if(i%2==0){
+							lis[i].style.backgroundColor="red";
+							}else{
+							lis[i].style.backgroundColor="yellow";
+
+							}
+						}
+					})(i)
+				}
+			}
+		</script>
+	</body>
+</html>

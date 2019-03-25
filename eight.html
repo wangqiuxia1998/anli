@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>*倒计时</title>
+	</head>
+	<body>
+		
+		<div></div>
+		<script type="text/javascript">
+			var div=document.getElementsByTagName("div")[0];
+			var date1= new Date();
+			var date2=new Date("2019/3/20/ 11:00:00");
+			//时间戳 毫秒数
+//			var time=date.getTime();
+			var time=date2.getTime()-date1.getTime();
+			var second=time/1000;
+			var day = parseInt(second/3600/24);
+			var hour=parseInt(second/3600%24);
+			var fen=second-day*24*3600-hour*3600;
+			var min=parseInt(fen/60);
+			var s=parseInt(fen%60);
+			div.innerHTML
+			="倒计时"+day+"天"+hour+"小时"+min+"分"+s+"秒";
+		</script>
+	</body>
+</html>
